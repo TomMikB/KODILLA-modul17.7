@@ -2,6 +2,7 @@ var fs = require('fs');
 var colors = require('colors');
 
 fs.readdir('./', 'utf-8', function(err, data) {
+	if (err) throw err;
 	fs.writeFile('./dirs.txt', data, function(err) {
 		if (err) throw err;
 		fs.readFile('./dirs.txt', 'utf-8', function(err, data) {
